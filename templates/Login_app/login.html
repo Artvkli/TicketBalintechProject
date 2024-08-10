@@ -1,0 +1,89 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="fa">
+
+<head>
+    <!-- ==== Meta Tags ==== -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- ==== Title Website ==== -->
+    <title>ورود</title>
+
+    <!-- ==== Add Css Files ==== -->
+    <link rel="stylesheet" href="{% static 'styles/reset.css' %}">
+    <link rel="stylesheet" href="{% static "styles/fonts.css" %}">
+    <link rel="stylesheet" href="{% static "styles/grid.css" %}">
+    <link rel="stylesheet" href="{% static "styles/constant.css" %}">
+    <link rel="stylesheet" href="{% static "styles/app.css" %}">
+    <link rel="stylesheet" href="{% static "styles/responsive.css" %}">
+</head>
+
+<body>
+
+
+    <!-- ==== Pack Icon ==== -->
+    <svg id="svg">
+        <symbol id="close" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="3"
+            stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M6 18 18 6M6 6l12 12" />
+        </symbol>
+    </svg>
+
+
+    <!-- ==== Start Main ==== -->
+    <main class="main">
+        <div class="container">
+            <!-- ==== Start Section Login ==== -->
+            <section class="login">
+                <h1 class="login__title">خوش آمدید</h1>
+                <span class="login__text">
+                    لطفا نام کاربری و پسورد خود را وارد کنید
+                </span>
+
+                <form action="#" class="login-form" method="post">
+                    {% csrf_token %}
+                    <div>
+                        <input type="text" class="login-form__input" name="username" placeholder="نام کاربری">
+                    </div>
+                    <div>
+                        <input type="password" class="login-form__input" name="password" placeholder="پسورد">
+                    </div>
+
+                    <button type="submit" class="login-form__btn">ورود</button>
+                </form>
+            </section>
+        </div>
+    </main>
+    <!-- ==== Finish Main ==== -->
+
+
+    <!-- ==== Error Box ==== -->
+    <div class="error-box">
+        <!-- icon -->
+        <div class="error-box__icon">
+            <svg>
+                <use href="#close"></use>
+            </svg>
+        </div>
+
+        <!-- info -->
+        <div class="error-box__data">
+            <h2 class="error-message__title">خطا</h2>
+            <p class="error-message__text">پر کردن تمام فیلد ها اجباری است</p>
+        </div>
+    </div>
+    <!-- ==== Error Box ==== -->
+
+
+    <!-- ==== Add Js File ==== -->
+    <script src="{% static "scripts/main.js" %}"></script>
+</body>
+{% if messages %}
+    <ul>
+    {% for message in messages %}
+        <li>{{ message }}</li>
+    {% endfor %}
+    </ul>
+{% endif %}
+</html>

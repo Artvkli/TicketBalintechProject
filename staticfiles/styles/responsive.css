@@ -1,0 +1,48 @@
+@media screen and (min-width: 576px) {
+    .login {
+        width: 36rem;
+        margin: 0 auto;
+    }
+
+    .error-box {
+        width: 36rem;
+    }
+}
+
+@media screen and (min-width: 768px) {
+    .desktop-header {
+        display: block;
+    }
+
+    .header,
+    .cover,
+    .header-menu {
+        display: none;
+    }
+
+    .login__title {
+        font-size: 3.2rem;
+    }
+
+    .login__text {
+        margin-top: 2.2rem;
+    }
+}
+
+@media screen and (min-width: 992px) {
+    .desktop-menu {
+        justify-content: flex-start;
+    }
+
+    .desktop-header__links {
+        display: flex;
+    }
+
+    .desktop-header__wrapper {
+        justify-content: space-between;
+    }
+}
+
+@media screen and (min-width: 1200px) {}
+
+@media screen and (min-width: 1400px) {}

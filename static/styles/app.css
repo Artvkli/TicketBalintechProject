@@ -1,0 +1,116 @@
+body {
+    /* Center Placement On The Page */
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+
+/* ==== Start Main ==== */
+.main {
+    width: 100%;
+}
+
+
+/* ==== Start Section Login ==== */
+.login {
+    padding: 2.4rem;
+    border-radius: 1.2rem;
+    text-align: center;
+    background-color: var(--white-color);
+}
+
+.login__title {
+    font-size: 2.2rem;
+    font-family: "Morabba-Bold";
+    color: var(--black-color);
+    line-height: 24.8px;
+}
+
+.login__text {
+    display: inline-block;
+    color: var(--text-color);
+    margin-top: 1.2rem;
+}
+
+.login-form {
+    margin-top: 2.4rem;
+}
+
+.login-form__input {
+    display: inline-block;
+    width: 100%;
+    padding: 0 2rem;
+    background-color: var(--bg-color);
+    height: 4.8rem;
+    border-radius: .8rem;
+}
+
+.login-form div:first-child {
+    margin-bottom: 1.6rem;
+}
+
+.login-form__btn {
+    cursor: pointer;
+    width: 100%;
+    background-color: var(--primary-color);
+    color: var(--white-color);
+    font-family: "Dana-Medium";
+    margin-top: 2.4rem;
+    padding: 1.2rem 0;
+    border-radius: .8rem;
+}
+
+/* ==== Finish Section Login ==== */
+
+/* ==== Finish Main ==== */
+
+
+/* ==== Start Error Box ==== */
+.error-box {
+    position: absolute;
+    top: -30%;
+    right: 1.6rem;
+    left: 1.6rem;
+    display: flex;
+    align-items: center;
+    gap: 1.8rem;
+    border-radius: 1.2rem;
+    background-color: var(--white-color);
+    padding: 2.4rem;
+    transition: all 250ms ease-in-out;
+    border-bottom: .2rem solid #ef4444;
+}
+
+.error-box__icon {
+    background-color: #ef4444;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 4rem;
+    height: 4rem;
+    border-radius: 10rem;
+}
+
+.error-box__icon svg {
+    width: 2rem;
+    height: 2rem;
+    color: var(--white-color);
+}
+
+.error-box__data {
+    display: flex;
+    flex-direction: column;
+}
+
+.error-message__title {
+    color: var(--black-color);
+    font-family: "Dana-DemiBold";
+}
+
+.error-message__text {
+    color: var(--text-color);
+}
+
+/* ==== Finish Error Box ==== */

@@ -1,0 +1,272 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="fa">
+
+<head>
+    <!-- ==== Meta Tags ==== -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- ==== Title Website ===== -->
+    <title>داشبورد</title>
+
+    <!-- ==== Add Css Files ==== -->
+    <link rel="stylesheet" href="{% static 'styles/reset.css'%}">
+    <link rel="stylesheet" href="{% static 'styles/fonts.css'%}">
+    <link rel="stylesheet" href="{% static 'styles/grid.css'%}">
+    <link rel="stylesheet" href="{% static 'styles/constant.css'%}">
+    <link rel="stylesheet" href="{% static 'styles/dashboard.css'%}">
+    <link rel="stylesheet" href="{% static 'styles/responsive.css'%}">
+</head>
+
+<body>
+
+
+    <!-- ==== Pack Icon ==== -->
+    <svg id="svg">
+        <symbol id="bars-3" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
+            stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5" />
+        </symbol>
+        <symbol id="sun" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
+            stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round"
+                d="M12 3v2.25m6.364.386-1.591 1.591M21 12h-2.25m-.386 6.364-1.591-1.591M12 18.75V21m-4.773-4.227-1.591 1.591M5.25 12H3m4.227-4.773L5.636 5.636M15.75 12a3.75 3.75 0 1 1-7.5 0 3.75 3.75 0 0 1 7.5 0Z" />
+        </symbol>
+        <symbol id="moon" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
+            stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round"
+                d="M21.752 15.002A9.72 9.72 0 0 1 18 15.75c-5.385 0-9.75-4.365-9.75-9.75 0-1.33.266-2.597.748-3.752A9.753 9.753 0 0 0 3 11.25C3 16.635 7.365 21 12.75 21a9.753 9.753 0 0 0 9.002-5.998Z" />
+        </symbol>
+        <symbol id="home" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
+            stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round"
+                d="m2.25 12 8.954-8.955c.44-.439 1.152-.439 1.591 0L21.75 12M4.5 9.75v10.125c0 .621.504 1.125 1.125 1.125H9.75v-4.875c0-.621.504-1.125 1.125-1.125h2.25c.621 0 1.125.504 1.125 1.125V21h4.125c.621 0 1.125-.504 1.125-1.125V9.75M8.25 21h8.25" />
+        </symbol>
+        <symbol id="document" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
+            stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round"
+                d="M19.5 14.25v-2.625a3.375 3.375 0 0 0-3.375-3.375h-1.5A1.125 1.125 0 0 1 13.5 7.125v-1.5a3.375 3.375 0 0 0-3.375-3.375H8.25m0 12.75h7.5m-7.5 3H12M10.5 2.25H5.625c-.621 0-1.125.504-1.125 1.125v17.25c0 .621.504 1.125 1.125 1.125h12.75c.621 0 1.125-.504 1.125-1.125V11.25a9 9 0 0 0-9-9Z" />
+        </symbol>
+        <symbol id="clipboard-document-list" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+            stroke-width="1.5" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round"
+                d="M9 12h3.75M9 15h3.75M9 18h3.75m3 .75H18a2.25 2.25 0 0 0 2.25-2.25V6.108c0-1.135-.845-2.098-1.976-2.192a48.424 48.424 0 0 0-1.123-.08m-5.801 0c-.065.21-.1.433-.1.664 0 .414.336.75.75.75h4.5a.75.75 0 0 0 .75-.75 2.25 2.25 0 0 0-.1-.664m-5.8 0A2.251 2.251 0 0 1 13.5 2.25H15c1.012 0 1.867.668 2.15 1.586m-5.8 0c-.376.023-.75.05-1.124.08C9.095 4.01 8.25 4.973 8.25 6.108V8.25m0 0H4.875c-.621 0-1.125.504-1.125 1.125v11.25c0 .621.504 1.125 1.125 1.125h9.75c.621 0 1.125-.504 1.125-1.125V9.375c0-.621-.504-1.125-1.125-1.125H8.25ZM6.75 12h.008v.008H6.75V12Zm0 3h.008v.008H6.75V15Zm0 3h.008v.008H6.75V18Z" />
+        </symbol>
+        <symbol id="link" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
+            stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round"
+                d="M13.19 8.688a4.5 4.5 0 0 1 1.242 7.244l-4.5 4.5a4.5 4.5 0 0 1-6.364-6.364l1.757-1.757m13.35-.622 1.757-1.757a4.5 4.5 0 0 0-6.364-6.364l-4.5 4.5a4.5 4.5 0 0 0 1.242 7.244" />
+        </symbol>
+        <symbol id="x-mark" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
+            stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M6 18 18 6M6 6l12 12" />
+        </symbol>
+        <symbol id="user" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
+            stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round"
+                d="M15.75 6a3.75 3.75 0 1 1-7.5 0 3.75 3.75 0 0 1 7.5 0ZM4.501 20.118a7.5 7.5 0 0 1 14.998 0A17.933 17.933 0 0 1 12 21.75c-2.676 0-5.216-.584-7.499-1.632Z" />
+        </symbol>
+        <symbol id="robot" version="1.1" viewBox="0 0 1200 1200" xmlns="http://www.w3.org/2000/svg">
+            <path d="m906 639c0 19.883-16.117 36-36 36s-36-16.117-36-36 16.117-36 36-36 36 16.117 36 36" />
+            <path
+                d="m1042.6 600.32c4.6875-4.6875 4.6875-12.281 0-16.969l-195.83-195.83c-1.1055-1.1094-2.4336-1.9844-3.9023-2.5938-1.4648-0.60547-3.0195-0.92578-4.582-0.92578h-49.57l-170.55-170.55c-0.042968-0.042968-0.10547-0.054687-0.15234-0.10156-13.055-13.168-31.137-21.344-51.102-21.344-0.79297 0-1.5625 0.09375-2.3516 0.12109-0.20703-0.011719-0.38281-0.12109-0.58984-0.12109h-240c-31.105 0-57.59 19.863-67.633 47.543-0.050782 0.125-0.16016 0.20703-0.20703 0.33594l-65.73 175.92c-0.33594 0.89453-0.54688 1.8203-0.66406 2.75-0.003906 0.023438-0.015625 0.042969-0.015625 0.066407-0.16016 1.3672 0 2.7344 0.30859 4.0703 0.066406 0.28516 0.12109 0.55859 0.20703 0.83984 0.35938 1.1641 0.82812 2.293 1.5391 3.3203 0.097656 0.14062 0.23437 0.24219 0.33594 0.375 0.050781 0.066406 0.058594 0.14844 0.10938 0.21484l41.398 52.41c-45.715 20.762-77.648 66.754-77.648 120.15 0 34.766 13.398 67.578 37.73 92.402 4.6406 4.7227 12.23 4.7969 16.977 0.17188 4.7305-4.6406 4.8047-12.238 0.17188-16.977-19.918-20.309-30.879-47.156-30.879-75.598 0-59.547 48.453-108 108-108s108 48.453 108 108c0 28.441-10.961 55.289-30.871 75.598-4.6367 4.7344-4.5586 12.332 0.17188 16.977 2.3359 2.2852 5.3711 3.4258 8.3984 3.4258 3.1094 0 6.2148-1.2031 8.5742-3.5977 24.328-24.824 37.727-57.637 37.727-92.402 0-51.52-29.738-96.125-72.887-117.86l46.047-54.391c0.37109-0.44141 0.5-0.97656 0.80078-1.4492 0.45703-0.71875 0.91797-1.3984 1.2148-2.207s0.38281-1.6289 0.5-2.4727c0.074219-0.55469 0.32422-1.0508 0.32422-1.625v-84h155.25l144.75 144.75v45.492c0 3.4102 1.4531 6.4492 3.7344 8.6328l70.523 70.527-205.87 318.6h-108.39c-33.082 0-60 26.918-60 60v24c0 6.6289 5.3711 12 12 12h588c6.6289 0 12-5.3711 12-12v-72c0-6.6289-5.3711-12-12-12h-24v-253.05zm-172.64-39.316c43.008 0 78 34.992 78 78s-34.992 78-78 78-78-34.992-78-78 34.992-78 78-78zm-303.06-345c26.465 0 48 21.535 48 48s-21.535 48-48 48-48-21.535-48-48 21.535-48 48-48zm71.801 51.93 129.92 129.93-60.812 60.812-124.6-124.6c30.617-7.1289 53.73-33.809 55.488-66.137zm81.258 212.53 72.457-72.457h16.891l-89.348 89.344zm-396-264.46c26.465 0 48 21.535 48 48s-21.535 48-48 48-48-21.535-48-48 21.535-48 48-48zm-69.121 252-28.438-36h131.68l-30.48 36zm117.12-60h-153.04l41.32-110.59c12.062 22.91 36.082 38.586 63.723 38.586 3.0352 0 6.0078-0.25 8.9492-0.61719 0.99609 0.26953 1.9688 0.61719 3.0508 0.61719h36zm23.691-137.94c0.16797-2.0039 0.30859-4.0117 0.30859-6.0586 0-18.449-7.0352-35.246-18.484-48h135.91c-11.453 12.754-18.484 29.551-18.484 48s7.0352 35.246 18.484 48h-117.43v-40.422c0-0.53906-0.23828-1-0.30859-1.5195zm329.35 256.18 113.28-113.27 178.86 178.86-45.18 45.184v-1.0156c0-0.35547-0.17188-0.65625-0.20312-1.0039-2.125-54.379-46.902-97.996-101.8-97.996-35.539 0-66.855 18.297-85.121 45.938-0.085937 0.12109-0.21875 0.18359-0.30078 0.30859l-0.99609 1.543zm258.96 469.76h-564v-12c0-19.852 16.148-36 36-36h528zm-391.04-72 175.92-272.25c6.3086 50.234 49.199 89.246 101.12 89.246 31.273 0 59.273-14.176 78-36.406v219.41z" />
+        </symbol>
+    </svg>
+
+
+    <!-- ==== Start Header ==== -->
+    <header class="header">
+        <div class="container">
+            <!-- bars logo -->
+            <div class="header__bars">
+                <svg class="header__bars-icon">
+                    <use href="#bars-3"></use>
+                </svg>
+            </div>
+
+            <!-- toggle theme -->
+            <div class="header__theme">
+                <div>
+                    <svg class="header__theme-icon">
+                        <use href="#sun"></use>
+                    </svg>
+                </div>
+                <div>
+                    <svg class="header__theme-icon">
+                        <use href="#moon"></use>
+                    </svg>
+                </div>
+            </div>
+
+            <!-- menu -->
+            <div class="header-menu">
+                <!-- close button -->
+                <div class="header-menu__close">
+                    <svg class="header-menu__close-icon">
+                        <use href="#x-mark"></use>
+                    </svg>
+                </div>
+
+                <!-- navigation -->
+                <nav class="nav">
+                    <ul class="menu">
+                        <li class="menu__item">
+                            <a href="#" class="menu__link">
+                                <svg class="menu__link-icon">
+                                    <use href="#home"></use>
+                                </svg>
+                                صفحه اصلی
+                            </a>
+                        </li>
+                        <li class="menu__item">
+                            <a href="#" class="menu__link">
+                                <svg class="menu__link-icon">
+                                    <use href="#document"></use>
+                                </svg>
+                                درخواست جدید
+                            </a>
+                        </li>
+                        <li class="menu__item">
+                            <a href="#" class="menu__link">
+                                <svg class="menu__link-icon">
+                                    <use href="#clipboard-document-list"></use>
+                                </svg>
+                                لیست درخواست ها
+                            </a>
+                        </li>
+                        <li class="menu__item">
+                            <a href="#" class="menu__link">
+                                <svg class="menu__link-icon">
+                                    <use href="#link"></use>
+                                </svg>
+                                وب سایت جامع بالین تک
+                            </a>
+                        </li>
+                    </ul>
+                </nav>
+            </div>
+        </div>
+    </header>
+    <!-- ==== Finish Header ==== -->
+
+
+    <!-- ==== Start Desktop Header ==== -->
+    <div class="desktop-header">
+        <div class="container">
+            <!-- wrapper -->
+            <div class="desktop-header__wrapper">
+                <!-- nav -->
+                <nav class="desktop-nav">
+                    <ul class="desktop-menu">
+                        <li class="desktop-menu__item">
+                            <a href="dashboard.html" class="desktop-menu__link">
+                                <svg class="desktop-menu__link-icon">
+                                    <use href="#home"></use>
+                                </svg>
+                                صفحه اصلی
+                            </a>
+                        </li>
+                        <li class="desktop-menu__item desktop-menu__item--modal">
+                            <a href="#" class="desktop-menu__link">
+                                <svg class="desktop-menu__link-icon">
+                                    <use href="#document"></use>
+                                </svg>
+                                درخواست جدید
+                            </a>
+                        </li>
+                        <li class="desktop-menu__item">
+                            <a href="#" class="desktop-menu__link">
+                                <svg class="desktop-menu__link-icon">
+                                    <use href="#clipboard-document-list"></use>
+                                </svg>
+                                لیست درخواست ها
+                            </a>
+                        </li>
+                        <li class="desktop-menu__item">
+                            <a href="#" class="desktop-menu__link">
+                                <svg class="desktop-menu__link-icon">
+                                    <use href="#link"></use>
+                                </svg>
+                                وب سایت جامع بالین تک
+                            </a>
+                        </li>
+                    </ul>
+                </nav>
+
+                <!-- desktop links -->
+                <div class="desktop-header__links">
+                    <div class="desktop-header__link">
+                        <svg>
+                            <use href="#user"></use>
+                        </svg>
+                        <span>امیررضا رشوند</span>
+                    </div>
+                    <div class="desktop-header__link">
+                        <svg>
+                            <use href="#sun"></use>
+                        </svg>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- ==== Finish Desktop Header ==== -->
+
+
+    <!-- ==== Cover For Menu ==== -->
+    <div class="cover"></div>
+    <!-- ==== Cover For Menu ==== -->
+
+
+    <!-- ==== Cover For Modal ==== -->
+    <div class="cover-modal">
+        <div class="modal">
+            <!-- Close Modal -->
+            <div class="modal__close">
+                <svg>
+                    <use href="#x-mark"></use>
+                </svg>
+            </div>
+
+            <!-- header modal -->
+            <div class="modal__header">
+                <h2 class="modal__header-title">ثبت درخواست جدید</h2>
+            </div>
+
+            <!-- modal items -->
+            <div class="modal__items">
+                <div class="modal__item">
+                    <!-- icon -->
+                    <div class="modal__icon">
+                        <svg>
+                            <use href="#robot"></use>
+                        </svg>
+                    </div>
+
+                    <!-- title -->
+                    <a href="#" class="modal__title">طراحی و ساخت</a>
+                </div>
+
+                <div class="modal__item">
+                    <!-- icon -->
+                    <div class="modal__icon">
+                        <svg>
+                            <use href="#robot"></use>
+                        </svg>
+                    </div>
+
+                    <!-- title -->
+                    <a href="#" class="modal__title">پشتیبانی و تولید</a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- ==== Cover For Modal ==== -->
+
+
+    <!-- ==== Add Js File ==== -->
+    <script src="{% static 'scripts/dashboard.js'%}"></script>
+</body>
+
+</html>

@@ -1,0 +1,49 @@
+/* ==== Variables ==== */
+:root {
+    --primary-color: #10B981;
+    --text-color: #757575;
+    --black-color: #2B2B2B;
+    --white-color: #FFFFFF;
+    --bg-color: #f3f4f6;
+}
+
+
+/* ==== Configuration ==== */
+html {
+    box-sizing: border-box;
+    font-size: 62.5%;
+    /* 62.5% => 10px */
+}
+
+*,
+*::before,
+*::after {
+    box-sizing: inherit;
+}
+
+body {
+    font-family: "Dana-Regular";
+    font-size: 1.6rem;
+    line-height: 1.6;
+    direction: rtl;
+    text-align: right;
+    background-color: var(--bg-color);
+}
+
+
+/* ==== Reset ==== */
+#svg {
+    display: none;
+}
+
+a {
+    text-decoration: none;
+}
+
+button,
+input {
+    font: inherit;
+    outline: none;
+    border: none;
+    background-color: transparent;
+}
