@@ -30,7 +30,7 @@
                 <h1 class="ticket__title">ارسال تیکت</h1>
                 <span class="ticket__line"></span>
 
-                <form action="{% url 'home:home' %}" class="ticket-form" method='post'>
+                <form action="{% url 'ticket:ticket' %}" class="ticket-form" method='post'>
                     {% csrf_token %}
                     <div>
                         <label for="unit" class="ticket-form__label">واحد</label>

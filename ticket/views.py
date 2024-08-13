@@ -6,7 +6,7 @@ def send_ticket(request):
         form = TicketForm(request.POST)
         if form.is_valid():
             form.save()
-            return redirect('home : home')
+            return redirect('home:home')
     else:
         form = TicketForm()
         
