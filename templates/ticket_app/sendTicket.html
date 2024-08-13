@@ -1,0 +1,66 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="fa">
+
+<head>
+    <!-- ==== Meta Tags ==== -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- ==== Title Website ==== -->
+    <title>ارسال تیکت</title>
+
+    <!-- ==== Add Css Files ==== -->
+    <link rel="stylesheet" href="{% static 'styles/reset.css' %}">
+    <link rel="stylesheet" href="{% static 'styles/fonts.css' %}">
+    <link rel="stylesheet" href="{% static 'styles/grid.css' %}">
+    <link rel="stylesheet" href="{% static 'styles/constant.css' %}">
+    <link rel="stylesheet" href="{% static 'styles/sendTicket.css' %}">
+    <link rel="stylesheet" href="{% static 'styles/responsive.css' %}">
+</head>
+
+<body>
+
+
+    <!-- ==== Start Main ==== -->
+    <main class="main">
+        <div class="container">
+            <!-- ==== Start Section Ticket Form ==== -->
+            <section class="ticket">
+                <h1 class="ticket__title">ارسال تیکت</h1>
+                <span class="ticket__line"></span>
+
+                <form action="{% url 'home:home' %}" class="ticket-form" method='post'>
+                    {% csrf_token %}
+                    <div>
+                        <label for="unit" class="ticket-form__label">واحد</label>
+                        <select name="unit" class="ticket-form__select">
+                            <option class="ticket-form__option">واحد مورد نظر ...</option>
+                            <option class="ticket-form__option">طراحی و ساخت</option>
+                            <option class="ticket-form__option">پشتیبانی و تولید</option>
+                        </select>
+                    </div>
+
+                    <div>
+                        <label for="subject" class="ticket-form__label">موضوع تیکت</label>
+                            {{form.subject}}
+                        
+                    </div>
+
+                    <div>
+                        <label for="text" class="ticket-form__label">موضوع تیکت</label>
+                            {{form.description}}
+                    </div>
+
+                    <button class="ticket-form__btn" type="submit">ارسال تیکت</button>
+                </form>
+            </section>
+            <!-- ==== Finish Section Ticket Form ==== -->
+        </div>
+    </main>
+    <!-- ==== Finish Main ==== -->
+
+
+</body>
+
+</html>
